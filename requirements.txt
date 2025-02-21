@@ -1,4 +1,8 @@
-Build a bookkeeping service where there are three models namely Books, Users and Libraries. A User can either be an Author or a Borrower, a Book is written by some User (Author), and is currently owned by a certain library and is currently borrowed by a certain user (Borrower).
+Build a bookkeeping service where there are three models namely Books, Users and Libraries. 
+A User can either be an Author or a Borrower, 
+a Book is written by some User (Author), 
+and is currently owned by a certain library 
+and is currently borrowed by a certain user (Borrower).
 
 Books:
 GET /api/books – Retrieve a list of all books
@@ -6,31 +10,38 @@ GET /api/books/:id – Retrieve details of a specific book by its ID — API sho
 POST /api/books – Create a new book entry
 PUT /api/books/:id – Update details of a specific book by its ID
 DELETE /api/books/:id – Delete a book by its ID
+
 Users:
 POST /api/users/register – Register a new user (both authors and borrowers)
 POST /api/users/login – Authenticate user and generate JWT token
+
 Borrowing:
 POST /api/borrow – Borrow a book against a charge
 PUT /api/return/:id – Return a borrowed book by its ID
+
 Libraries:
 GET /api/libraries – Retrieve a list of all libraries
 GET /api/libraries/:id – Retrieve details of a specific library by its ID — API should include the details of all the Books owned by the Library, each Book object should include the details of the Borrower.
 POST /api/libraries – Create a new library
 PUT /api/libraries/:id – Update details of a specific library by its ID
 DELETE /api/libraries/:id – Delete a library by its ID
+
 Library Inventory:
 GET /api/libraries/:id/inventory – Retrieve a list of books available in a specific library
 POST /api/libraries/:id/inventory – Add a book to the inventory of a specific library
 DELETE /api/libraries/:id/inventory/:bookId – Remove a book from the inventory of a specific library by its ID
+
 Constraints:
 Each Book object should have an image field that stores the reference to the Book Cover stored in Firebase.
 All the APIs should check for authorization — All endpoints except registration and login should require a valid JWT token for access.
 The APIs should be multilingual. i.e., the error or success messages should be in the language of choice of the user — English and Hindi being the two languages.
 Only authenticated users with appropriate roles can add or remove books from the library inventory.
+
 Evaluation Criteria:
 Code quality — The code should be concise and readable.
 API performance – Optimized API logic will be highly regarded.
 Security & Testing — APIs should be stable and secure, the false cases should be tested and addressed accordingly.
+
 Submission process:
 Create a Git repository containing your code and commit your changes. Keep the Repo Public.
 Include a README.md file with detailed instructions on how to run the application locally, including setup and usage instructions.
