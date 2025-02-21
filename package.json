@@ -1,0 +1,25 @@
+{
+  "name": "bookhive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/app",
+    "start": "node src/app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darshanikakade/BookHive.git"
+  },
+  "author": "darshani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darshanikakade/BookHive/issues"
+  },
+  "homepage": "https://github.com/darshanikakade/BookHive#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}
