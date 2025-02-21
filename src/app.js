@@ -1,30 +1,17 @@
 const express = require('express')
-const { Sequelize } = require('sequelize');
 require('dotenv').config()
-
+const sequelize = require('./config/database')
 const app = express()
 const port = process.env.PORT
-
-const dbName = process.env.DB_NAME
-const dbUser = process.env.DB_USER
-const dbPassword = process.env.DB_PASSWORD
-const dbHost = process.env.DB_HOST
+const User = require('./db/models')
 
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
+    const jane = await User.create({ firstName: 'Jane', lastName: 'Doe' });
+    console.log("Jane's auto-generated ID:", jane.id);
     res.send("Hello World..!")
 })
 
-
-const sequelize = new Sequelize(
-    dbName,
-    dbUser,
-    dbPassword,
-    {
-        host: dbHost,
-        dialect: 'mysql'
-    }
-);
 
 sequelize.authenticate().then(() => {
     console.log('Connection has been established successfully.');
